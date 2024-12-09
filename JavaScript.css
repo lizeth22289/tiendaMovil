@@ -1,0 +1,5 @@
+function changeImage(thumbnail) {
+    // Cambia la imagen principal cuando se hace clic en una miniatura
+    var mainImage = document.getElementById('main-image');
+    mainImage.src = thumbnail.src;
+}

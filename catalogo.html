@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Teléfonos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        /* Video de fondo */
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        nav {
+            background: rgba(28, 28, 28, 0.9);
+            color: #fff;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+            font-size: 16px;
+        }
+
+        .nav-menu li {
+            margin: 0 20px;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            transition: color 0.3s, transform 0.3s;
+animation: slide-up-down 5s infinite alternate;
+        }
+
+        .nav-menu a:hover {
+            color: #00aaff;
+            transform: scale(1.1);
+        }
+
+   
+      #catalogo {
+    padding: 40px 20px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    max-width: 1200px; /* Ancho máximo */
+    margin: 0 auto; /* Centrado */
+}
+
+        #catalogo h1 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        #catalogo p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+      
+      .phones-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    gap: 30px;
+    justify-items: center;
+    max-width: 1200px; /* Ancho máximo */
+    margin: 0 auto; /* Centrado */
+    padding: 10px;
+}
+        
+        .phone-item {
+            background: rgba(255, 255, 255, 0.9);
+ 	           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            width: 100%; /* Se ajusta al 100% del espacio disponible */
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .phone-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .phone-item img {
+            width: 250px;
+            height: 250PX;
+            object-fit: cover;
+            border-bottom: 1px solid #ddd;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .phone-item .phone-info {
+            padding: 10px;
+        }
+
+        .phone-item .phone-info h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .phone-item .phone-info .price {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #00aaff;
+            margin-bottom: 10px;
+        }
+
+        .phone-item .btn-details {
+            background-color: #00aaff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .phone-item .btn-details:hover {
+            background-color: #0088cc;
+        }
+
+        footer {
+            background: rgba(28, 28, 28, 0.9);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        .social-media {
+            margin-top: 10px;
+        }
+
+        .social-media a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.1rem;
+        }
+
+        .social-media a:hover {
+            color: #00aaff;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .phones-container {
+                grid-template-columns: repeat(2, 1fr); 
+            }
+        }
+
+        @media (max-width: 480px) {
+            .phones-container {
+                grid-template-columns: 1fr; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Video de fondo -->
+    <video autoplay loop muted playsinline>
+        <source src="Videos/fondo1.mp4" type="Video/mp4">
+        <img src="Imagen/fondo-respaldo.jpg" alt="Fondo alternativo">
+        Tu navegador no soporta videos HTML5.
+    </video>
+
+   
+
+    <!-- Sección de Catálogo -->
+    <section id="catalogo">
+        <h1>Catálogo de Teléfonos</h1>
+        <p>Explora nuestra amplia selección de teléfonos móviles</p>
+   <div class="phones-container">
+            <!-- Sony Xperia 1 IV -->
+            <div class="phone-item">
+                <img src="Imagen/sony-xperia-1-iv-1.jpg" alt="Sony Xperia 1 IV">
+                <div class="phone-info">
+                    <h2>Sony Xperia 1 IV</h2>
+                    <p>El Xperia 1 IV tiene una increíble pantalla OLED 4K y capacidades fotográficas de nivel profesional.</p>
+                    <div class="price">L. 34,000</div>
+                    
+		   <a href="detalles/Sony_Xperia_1_IV.html">
+    <button class="btn-details">Ver detalles</button>
+</a>
+                </div>
+            </div>
+            <!-- Galaxy Z Fold 5 -->
+            <div class="phone-item">
+                <img src="Imagen/galaxy-z-fold-5.jpg" alt="Galaxy Z Fold 5">
+                <div class="phone-info">
+                    <h2>Galaxy Z Fold 5</h2>
+                    <p>Un dispositivo plegable de última generación con una pantalla grande y potente rendimiento.</p>
+                    <div class="price">L. 45,000</div>
+                    <a href="detalles/Galaxy_Z_Fold_5.html">
+    <button class="btn-details">Ver detalles</button>
+</a>
+                </div>
+            </div>
+            <!-- iPhone 14 -->
+            <div class="phone-item">
+                <img src="Imagen/iphone-14.jpg" alt="iPhone 14">
+                <div class="phone-info">
+                    <h2>iPhone 14</h2>
+                    <p>El último modelo de Apple, con un rendimiento excepcional, cámara mejorada y diseño elegante.</p>
+                    <div class="price">L. 35,000</div>
+                    <a href="detalles/iPhone_14.html">
+    <button class="btn-details">Ver detalles</button>
+</a>
+                </div>
+            </div>
+            <!-- Google Pixel 8 -->
+            <div class="phone-item">
+                <img src="Imagen/google-pixel-8.jpg" alt="Google Pixel 8">
+                <div class="phone-info">
+                    <h2>Google Pixel 8</h2>
+                    <p>El último modelo de Google, con la increíble cámara y rendimiento fluido gracias al chip Tensor.</p>
+                    <div class="price">L. 28,000</div>
+ 		    <a href="detalles/Google_Pixel_8.html">
+                    <button class="btn-details">Ver detalles</button>
+</a>
+      
+                </div>
+            </div>
+            <!-- HTC U12 Plus -->
+            <div class="phone-item">
+                <img src="Imagen/htc-u12-plus.jpg" alt="HTC U12 Plus">
+                <div class="phone-info">
+                    <h2>HTC U12 Plus</h2>
+                    <p>Un dispositivo con excelente rendimiento y diseño premium, con cámara dual de alta calidad.</p>
+                    <div class="price">L. 25,000</div>
+                    <a href="detalles/HTC_U12_Plus.html">
+    <button class="btn-details">Ver detalles</button>
+</a>
+                </div>
+            </div>
+            <!-- OnePlus 11 -->
+            <div class="phone-item">
+                <img src="Imagen/oneplus-11.jpg" alt="OnePlus 11">
+                <div class="phone-info">
+                    <h2>OnePlus 11</h2>
+                    <p>El teléfono insignia de OnePlus, con un rendimiento increíble y carga ultra rápida.</p>
+                    <div class="price">L. 32,000</div>
+                   <a href="detalles/OnePlus_11.html">
+    <button class="btn-details">Ver detalles</button>
+</a>
+                </div>
+            </div>
+              <!-- Realme GT 2 Pro -->
+            <div class="phone-item">
+                <img src="Imagen/realme-gt-2-pro.jpg" alt="Realme GT 2 Pro">
+                <div class="phone-info">
+                    <h2>Realme GT 2 Pro</h2>
+                    <p>Un teléfono premium con un diseño innovador y un rendimiento sobresaliente.</p>
+                    <div class="price">L. 28,000</div>
+                    <a href="detalles/Realme_GT_2_Pro.html">
+    <button class="btn-details">Ver detalles</button>
+</a>
+                </div>
+            </div>
+            <!-- Xiaomi Mi 13 -->
+            <div class="phone-item">
+                <img src="Imagen/xiaomi-mi-13.jpg" alt="Xiaomi Mi 13">
+                <div class="phone-info">
+                    <h2>Xiaomi Mi 13</h2>
+                    <p>Un teléfono potente con una cámara de alta resolución y un procesador de última generación.</p>
+                    <div class="price">L. 27,500</div>
+                   
+                    <a href="detalles/Xiaomi_Mi_13.html">
+    <button class="btn-details">Ver detalles</button>
+</a>
+                </div>
+            </div>
+            <!-- Samsung Galaxy S23 -->
+            <div class="phone-item">
+                <img src="Imagen/samsung-galaxy-s23.jpg" alt="Samsung Galaxy S23">
+                <div class="phone-info">
+                    <h2>Samsung Galaxy S23</h2>
+                    <p>El nuevo Samsung Galaxy S23, con una pantalla impresionante y una cámara avanzada.</p>
+                    <div class="price">L. 34,000</div>
+		    <a href="detalles/Samsung_Galaxy_S23.html">
+                   <button class="btn-details">Ver detalles</button>
+</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Tienda de Teléfonos</p>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+</body>
+</html>

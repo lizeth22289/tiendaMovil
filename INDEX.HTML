@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a nuestra Tienda de Teléfonos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            overflow-x: hidden; /* Evita el desplazamiento horizontal */
+        }
+
+        /* Video de fondo */
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        nav {
+            background: rgba(28, 28, 28, 0.9);
+            color: #fff;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+            font-size: 16px;
+        }
+
+        .nav-menu li {
+            margin: 0 20px;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #00aaff;
+            transform: scale(1.1);
+        }
+
+        /* Sección de Bienvenida */
+        #welcome {
+            padding: 40px 20px;
+            text-align: center;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+            animation: slide-up-down 5s infinite alternate;
+        }
+
+        /* Animación de subir y bajar */
+        @keyframes slide-up-down {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .highlighted-phones {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .phone-item {
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .phone-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .phone-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 1px solid #ddd;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .phone-item .phone-info {
+            padding: 15px;
+        }
+
+        .phone-item .phone-info h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .phone-item .phone-info .price {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #00aaff;
+            margin-bottom: 10px;
+        }
+
+        .phone-item .phone-info .details-btn {
+            background-color: #00aaff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .phone-item .phone-info .details-btn:hover {
+            background-color: #0088cc;
+        }
+
+        footer {
+            background: rgba(28, 28, 28, 0.9);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        .social-media {
+            margin-top: 10px;
+        }
+
+        .social-media a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.1rem;
+        }
+
+        .social-media a:hover {
+            color: #00aaff;
+        }
+.btn {
+    padding: 10px 20px;
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    background-color: #007BFF; 
+    color: #fff;
+}
+
+.btn:hover {
+    background-color: #0056b3; 
+}
+
+.btn-buy {
+    background-color: #007BFF;/
+    color: #fff;
+    border: none; 
+}
+
+.btn-buy:hover {
+    background-color: #0056b3; 
+}
+
+.btn-details {
+    background-color: #007BFF; /
+    color: #fff;
+    border: none; /* Quita el borde */
+}
+
+.btn-details:hover {
+    background-color: #0056b3; /
+
+
+
+    </style>
+</head>
+<body>
+    <!-- Video de fondo -->
+    <video autoplay loop muted playsinline>
+        <source src="Videos/fondo1.mp4" type="Video/mp4">
+        <img src="Imagen/fondo-respaldo.jpg" alt="Fondo alternativo">
+        Tu navegador no soporta videos HTML5.
+    </video>
+
+    <!-- Navegación -->
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección de Bienvenida -->
+    <section id="welcome">
+        <h1>Bienvenido a nuestra Tienda de Teléfonos MegaMovil</h1>
+        <p>Explora nuestra selección de teléfonos destacados</p>
+        <div class="highlighted-phones">
+            <!-- Google Pixel 8 -->
+            <div class="phone-item">
+                <img src="Imagen/google-pixel-8.jpg" alt="Google Pixel 8">
+                <div class="phone-info">
+                    <h2>Google Pixel 8</h2>
+                    <p>Captura imágenes impresionantes con la cámara avanzada de Google.</p>
+                    <div class="price">L. 28,000</div>
+                    <a href="detalles/Google_Pixel_8.html">
+    <button class="btn-details">Ver detalles</button>
+</a>
+                </div>
+            </div>
+            <!-- OnePlus 11 -->
+            <div class="phone-item">
+                <img src="Imagen/oneplus-11.jpg" alt="OnePlus 11">
+                <div class="phone-info">
+                    <h2>OnePlus 11</h2>
+                    <p>Rendimiento excepcional y carga rápida con un diseño premium.</p>
+                    <div class="price">L. 32,000</div>
+                   <a href="detalles/OnePlus_11.html">
+    <button class="btn-details">Ver detalles</button>
+</a>
+            </div>
+ </div>
+            <!-- Samsung Galaxy S23 -->
+            <div class="phone-item">
+                <img src="Imagen/samsung-galaxy-s23.jpg" alt="Samsung Galaxy S23">
+                <div class="phone-info">
+                    <h2>Samsung Galaxy S23</h2>
+                    <p>Una excelente cámara y rendimiento con la última tecnología.</p>
+                    <div class="price">L. 37,000</div>
+                     <a href="detalles/Samsung_Galaxy_S23.html">
+    <button class="btn-details">Ver detalles</button>
+</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Tienda de Teléfonos</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const phonesSection = document.querySelector('#welcome');
+            const scrollPosition = window.scrollY;
+            phonesSection.style.transform = `translateY(${scrollPosition * 0.1}px)`;
+        });
+    </script>
+</body>
+</html>
